@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberSafe | About Us</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ---- Additional styles specific to the About page ---- */
+    .board-card-img-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--secondary), var(--border));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: rgba(0, 212, 255, 0.25);
+      transition: color 0.3s;
+    }
+
+    .board-card:hover .board-card-img-placeholder {
+      color: rgba(0, 212, 255, 0.55);
+    }
+
+    .board-card img.member-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .module-badge {
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      font-size: 0.78rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-info-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .project-info-item .pii-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .project-info-item .pii-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <!--Navigation-->
+  <nav>
+    <div class="nav-brand">
+      <span class="shield-icon">&#128737;</span>
+      CyberSafe
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="survey.html">Survey</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!--Banner-->
+  <header class="banner" style="padding: 3.5rem 2rem 3rem;">
+    <h1>Meet the <span>Team</span></h1>
+    <p>
+      The team behind the CyberSafe cybersecurity awareness project,
+      presented as part of the MGMT2005 - Management Information Systems.
+    </p>
+  </header>
+       <!--Team Members-->
+      <div class="section-title">Our <span>Team</span></div>
+      <div class="divider"></div>
+
+      <div class="board-grid">
+
+        <!-- ---- MEMBER 1 ---- -->
+        <div class="board-card">
+          <img src="images/headshot_aj_v1.jpeg" alt="Adaiah Lescott" class="member-photo">
+          <div class="board-card-body">
+            <div class="member-name">Adaiah Lescott</div>
+            <ul class="member-details">
+              <li>
+                <span class="detail-label">ID:</span>
+                <span>400023283</span>
+              </li>
+              <li>
+                <span class="detail-label">Email:</span>
+                <span>adaiah.lescott@mycavehill.uwi.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ---- MEMBER 2 ---- -->
+        <div class="board-card">
+          <img src="images/headshot_jc_v1.png" alt="Jabar Caddle" class="member-photo">
+          <div class="board-card-body">
+            <div class="member-name">Jabar Caddle</div>
+            <ul class="member-details">
+              <li>
+                <span class="detail-label">ID:</span>
+                <span>400011802</span>
+              </li>
+              <li>
+                <span class="detail-label">Email:</span>
+                <span>jabar.caddle@mycavehill.uwi.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ---- MEMBER 3 ---- -->
+        <div class="board-card">
+          <div class="board-card-img-placeholder"><img src="" alt=""></div>
+          <div class="board-card-body">
+            <div class="member-name">Orlando Evelyn</div>
+            <ul class="member-details">
+              <li>
+                <span class="detail-label">ID:</span>
+                <span>409000415</span>
+              </li>
+              <li>
+                <span class="detail-label">Email:</span>
+                <span>orlando.evelyn@mycavehill.uwi.edu</span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <!-- ---- MEMBER 4 ---- -->
+        <div class="board-card">
+          <img src="images/headshot_sc_v1.jpeg" alt="Shakair Cadogan" class="member-photo">
+          <div class="board-card-body">
+            <div class="member-name">Shakair Cadogan</div>
+            <ul class="member-details">
+              <li>
+                <span class="detail-label">ID:</span>
+                <span>400024472</span>
+              </li>
+              <li>
+                <span class="detail-label">Email:</span>
+                <span>shakair.cadogan@mycavehill.uwi.edu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div><!-- /board-grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+    <p>&copy; 2025 <span>CyberSafe</span> &mdash; MGMT2006 Group 15 &nbsp;|&nbsp; Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberSafe | Cybercrime Data Analysis Survey</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!--Navigation-->
+  <nav>
+    <div class="nav-brand">
+      <span class="shield-icon">&#128737;</span>
+      CyberSafe
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="survey.html" class="active">Survey</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!--Banner-->
+  <header class="banner">
+    <h1>Cybercrime <span>Data Analysis</span> Survey</h1>
+    <p>
+      Help us understand cybercrime exposure and awareness across different industries and age groups.
+      This survey takes approximately 3 minutes. All responses are anonymous.
+    </p>
+  </header>
+
+  <!--Form-->
+  <section>
+    <div class="container">
+      <div class="form-wrapper">
+        <iframe
+          id="surveyFrame"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdYAdTSYfTWucdlIe9hsGSJKcTR6I3lU8nNjrmHdI1epbv9bg/viewform?embedded=true"
+          width="100%"
+          height="1200"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          style="border-radius: 8px;"
+          onload="handleFrameLoad()"
+        >Loading survey…</iframe>
+
+        <!-- Success message (hidden until form is submitted) -->
+        <div id="surveySuccess" class="success-msg" style="display:none;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">&#10003;</div>
+          <h3 style="color: var(--success); margin-bottom: 0.5rem;">Thank You!</h3>
+          <p style="color: var(--text-muted);">
+            Your response has been recorded. We appreciate you helping us with our research.
+          </p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 1.2rem;">Return to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+    <p>&copy; 2025 <span>CyberSafe</span> &mdash; MGMT2006 Group 15 &nbsp;|&nbsp; Built with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
