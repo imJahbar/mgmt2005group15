@@ -1,40 +1,3 @@
-function toggleAccordion(btn) {
-  const item = btn.closest('.accordion-item');
-  const body = item.querySelector('.accordion-body');
-  const isOpen = item.classList.contains('open');
-
-  // Close all other open items
-  document.querySelectorAll('.accordion-item.open').forEach(function (openItem) {
-    if (openItem !== item) {
-      openItem.classList.remove('open');
-      openItem.querySelector('.accordion-body').style.maxHeight = null;
-    }
-  });
-
-  if (isOpen) {
-    item.classList.remove('open');
-    body.style.maxHeight = null;
-  } else {
-    item.classList.add('open');
-    body.style.maxHeight = body.scrollHeight + 'px';
-  }
-}
-
-function selectScale(btn, fieldName, value) {
-  const group = btn.closest('.scale-group');
-  if (group) {
-    group.querySelectorAll('.scale-btn').forEach(function (b) {
-      b.classList.remove('selected');
-    });
-  }
-  btn.classList.add('selected');
-
-
-  const hiddenInput = document.getElementById('scaleValue_' + fieldName);
-  if (hiddenInput) {
-    hiddenInput.value = value;
-  }
-}
 
 //Count form pages, then show success on final submission page load
 var frameLoadCount = 0;
@@ -64,6 +27,16 @@ function handleFrameLoad() {
     }
   });
 })();
+
+// Show success message if Formspree redirected back after contact form submission
+if (new URLSearchParams(window.location.search).get('success') === 'true') {
+  var contactSuccess = document.getElementById('contact-success');
+  var contactForm = document.getElementById('contact-form');
+  if (contactSuccess && contactForm) {
+    contactSuccess.style.display = 'block';
+    contactForm.style.display = 'none';
+  }
+}
 
 // Smooth scroll for internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

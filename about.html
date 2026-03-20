@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberSafe | About Us</title>
+  <title>CCSG | About Us</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
     /* ---- Additional styles specific to the About page ---- */
@@ -31,45 +31,7 @@
       display: block;
     }
 
-    .module-badge {
-      display: inline-block;
-      background: rgba(0, 212, 255, 0.1);
-      color: var(--accent);
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      font-size: 0.78rem;
-      padding: 0.25rem 0.8rem;
-      border-radius: 20px;
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
 
-    .project-info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-
-    .project-info-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.2rem 1.4rem;
-    }
-
-    .project-info-item .pii-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .project-info-item .pii-value {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-    }
   </style>
 </head>
 <body>
@@ -91,16 +53,20 @@
   <header class="banner" style="padding: 3.5rem 2rem 3rem;">
     <h1>Meet the <span>Team</span></h1>
     <p>
-      The team behind the CyberSafe cybersecurity awareness project,
-      presented as part of the MGMT2005 - Management Information Systems.
+      The team behind the Caribbean Cyber Security Group, cybersecurity awareness project,
+      presented as part of the 
+      University of the West Indies
+      Cavehill Campus - Semester 2 25/26
+      MGMT2005 - Management Information Systems course.
     </p>
   </header>
-      
-      <!-- Team Members -->
-      <div class="section-title">Our <span>Team</span></div>
-      <div class="divider"></div>
 
-      <div class="board-grid">
+  <!-- Team Members -->
+  <section>
+    <div class="section-title">Our <span>Team</span></div>
+    <div class="divider"></div>
+
+    <div class="board-grid">
 
         <!-- MEMBER 1 -->
         <div class="board-card">
@@ -176,6 +142,48 @@
         </div>
 
 
+    </div>
+  </section>
+
+  <!-- Contact Us -->
+  <section style="padding: 4rem 2rem;">
+    <div class="section-title">Contact <span>Us</span></div>
+    <div class="divider"></div>
+    <p class="section-subtitle">Have a question or feedback? We'd love to hear from you.</p>
+
+    <div class="form-wrapper">
+      <div class="form-card">
+        <div class="success-msg" id="contact-success">
+          &#10003; Thanks for reaching out! We'll get back to you soon.
+        </div>
+        <form id="contact-form" action="https://formspree.io/f/xjgalnod" method="POST">
+          <div class="form-group">
+            <label for="contact-name">Name <span class="required">*</span></label>
+            <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email <span class="required">*</span></label>
+            <input type="email" id="contact-email" name="email" class="form-control" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject <span class="required">*</span></label>
+            <select id="contact-subject" name="subject" class="form-control" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Report an Issue">Report an Issue</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message <span class="required">*</span></label>
+            <textarea id="contact-message" name="message" class="form-control" placeholder="Write your message here..." rows="5" required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <p class="form-notice">We typically respond within 1–2 business days.</p>
+          </div>
+        </form>
       </div>
     </div>
   </section>

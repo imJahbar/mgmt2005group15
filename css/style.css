@@ -1,12 +1,11 @@
-/* ============================================================
-   Global Reset & Base
-   ============================================================ */
+/* Global Reset*/
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* CSS Variables for consistent theming */
 :root {
   --primary:     #0a192f;
   --secondary:   #112240;
@@ -42,9 +41,7 @@ a:hover { color: var(--white); }
 
 img { max-width: 100%; display: block; }
 
-/* ============================================================
-   Navigation
-   ============================================================ */
+/* Navigation */
 nav {
   position: sticky;
   top: 0;
@@ -94,9 +91,7 @@ nav {
   background: rgba(0, 212, 255, 0.08);
 }
 
-/* ============================================================
-   Banner / Page Header
-   ============================================================ */
+/* Banner / Page Header */
 .banner {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, #0d2137 100%);
   padding: 5rem 2rem 4rem;
@@ -113,19 +108,6 @@ nav {
   pointer-events: none;
 }
 
-.banner-badge {
-  display: inline-block;
-  background: rgba(0, 212, 255, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  margin-bottom: 1.2rem;
-}
 
 .banner h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
@@ -167,20 +149,8 @@ nav {
   box-shadow: 0 8px 24px rgba(0, 212, 255, 0.25);
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
 
-.btn-outline:hover {
-  background: rgba(0, 212, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   Main Container / Sections
-   ============================================================ */
+/* Main Container / Sections */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -222,9 +192,7 @@ section {
   margin: 0.6rem auto 1.2rem;
 }
 
-/* ============================================================
-   Cards
-   ============================================================ */
+/* Cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -245,10 +213,6 @@ section {
   box-shadow: 0 12px 32px rgba(0, 212, 255, 0.1);
 }
 
-.card-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
 
 .card h3 {
   font-size: 1.05rem;
@@ -261,26 +225,8 @@ section {
   color: var(--text-muted);
 }
 
-/* Threat severity badges */
-.badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.65rem;
-  border-radius: 20px;
-  margin-bottom: 0.8rem;
-}
 
-.badge-critical { background: rgba(255,71,87,0.15); color: var(--danger); border: 1px solid rgba(255,71,87,0.3); }
-.badge-high     { background: rgba(255,165,0,0.12); color: #ffa500;       border: 1px solid rgba(255,165,0,0.3); }
-.badge-medium   { background: rgba(255,212,0,0.12); color: #ffd400;       border: 1px solid rgba(255,212,0,0.3); }
-.badge-info     { background: rgba(0,212,255,0.10); color: var(--accent);  border: 1px solid rgba(0,212,255,0.25); }
-
-/* ============================================================
-   Info Blocks / Stat Bar
-   ============================================================ */
+/* Info Blocks / Stat Bar */
 .stat-bar {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -314,99 +260,8 @@ section {
   opacity: 0.7;
 }
 
-/* Info list */
-.info-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
 
-.info-list li {
-  display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
-  font-size: 0.92rem;
-  color: var(--text);
-}
-
-.info-list li::before {
-  content: '▸';
-  color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 0.05rem;
-}
-
-/* Two-column layout */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-@media (max-width: 700px) {
-  .two-col { grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   Accordion (for cybersecurity topics)
-   ============================================================ */
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.accordion-item {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  width: 100%;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 0.95rem;
-  font-weight: 600;
-  padding: 1rem 1.5rem;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s;
-}
-
-.accordion-header:hover { background: rgba(0,212,255,0.05); }
-
-.accordion-header .acc-icon {
-  color: var(--accent);
-  font-size: 1.2rem;
-  transition: transform 0.3s;
-}
-
-.accordion-item.open .acc-icon { transform: rotate(45deg); }
-
-.accordion-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-}
-
-.accordion-body-inner {
-  padding: 0 1.5rem 1.2rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-/* ============================================================
-   Form Styles
-   ============================================================ */
+/* Form Styles */
 .form-wrapper {
   max-width: 720px;
   margin: 0 auto;
@@ -457,51 +312,6 @@ select.form-control option { background: var(--secondary); }
 
 textarea.form-control { resize: vertical; min-height: 100px; }
 
-.radio-group, .checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.radio-group label, .checkbox-group label {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 0;
-}
-
-.radio-group input, .checkbox-group input {
-  accent-color: var(--accent);
-  width: 16px; height: 16px;
-}
-
-.scale-group {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.scale-btn {
-  background: var(--primary);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-muted);
-  width: 42px; height: 42px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-}
-
-.scale-btn:hover, .scale-btn.selected {
-  background: var(--accent);
-  color: var(--primary);
-  border-color: var(--accent);
-}
 
 .form-submit {
   margin-top: 2rem;
@@ -530,17 +340,22 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   color: var(--success);
 }
 
-/* ============================================================
-   About / Board of Directors
-   ============================================================ */
+/* About / Board of Directors */
 .board-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.8rem;
-  justify-content: center;
-  justify-items: center;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .board-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .board-grid { grid-template-columns: 1fr; }
 }
 
 .board-card {
@@ -558,17 +373,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   box-shadow: 0 16px 40px rgba(0, 212, 255, 0.12);
 }
 
-.board-card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  background: var(--secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  color: var(--border);
-}
 
 .board-card-body {
   padding: 1.4rem 1.2rem;
@@ -581,14 +385,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   margin-bottom: 0.2rem;
 }
 
-.board-card-body .member-role {
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.8rem;
-}
 
 .member-details {
   list-style: none;
@@ -613,9 +409,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   min-width: 32px;
 }
 
-/* ============================================================
-   Footer
-   ============================================================ */
+/* Footer */
 footer {
   background: var(--secondary);
   border-top: 1px solid var(--border);
@@ -627,9 +421,7 @@ footer {
 
 footer span { color: var(--accent); }
 
-/* ============================================================
-   Utility
-   ============================================================ */
+/* Utility */
 .text-accent { color: var(--accent); }
 .text-muted  { color: var(--text-muted); }
 .text-center { text-align: center; }
@@ -648,19 +440,8 @@ footer span { color: var(--accent); }
   margin: 1rem 0;
 }
 
-.warning-box {
-  background: rgba(255, 71, 87, 0.07);
-  border-left: 3px solid var(--danger);
-  border-radius: 0 6px 6px 0;
-  padding: 1rem 1.2rem;
-  font-size: 0.9rem;
-  color: var(--text);
-  margin: 1rem 0;
-}
 
-/* ============================================================
-   Responsive
-   ============================================================ */
+/* Responsive */
 @media (max-width: 600px) {
   nav { padding: 0 1rem; }
   .nav-links a { padding: 0.4rem 0.6rem; font-size: 0.82rem; }
