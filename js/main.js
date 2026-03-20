@@ -1,10 +1,3 @@
-/* ============================================================
-   main.js  —  CyberSafe Website
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   Accordion toggle
-   ---------------------------------------------------------- */
 function toggleAccordion(btn) {
   const item = btn.closest('.accordion-item');
   const body = item.querySelector('.accordion-body');
@@ -27,11 +20,7 @@ function toggleAccordion(btn) {
   }
 }
 
-/* ----------------------------------------------------------
-   Rating scale buttons (survey page)
-   ---------------------------------------------------------- */
 function selectScale(btn, fieldName, value) {
-  // Deselect siblings in the same scale group
   const group = btn.closest('.scale-group');
   if (group) {
     group.querySelectorAll('.scale-btn').forEach(function (b) {
@@ -40,27 +29,21 @@ function selectScale(btn, fieldName, value) {
   }
   btn.classList.add('selected');
 
-  // Write value into the hidden input for Google Forms
+
   const hiddenInput = document.getElementById('scaleValue_' + fieldName);
   if (hiddenInput) {
     hiddenInput.value = value;
   }
 }
 
-/* ----------------------------------------------------------
-   Google Forms embedded iframe — detect submission via load count
-   Each page navigation (Next) fires one load; submission fires the
-   final load after all pages have been visited.
-   Set FORM_PAGE_COUNT to the number of pages in your Google Form.
-   ---------------------------------------------------------- */
+//Count form pages, then show success on final submission page load
 var frameLoadCount = 0;
-var FORM_PAGE_COUNT = 4; // adjust to match the number of pages in the form
+var FORM_PAGE_COUNT = 4; //limit
 
 function handleFrameLoad() {
   frameLoadCount++;
-  // skip loads for the initial render + each "Next" page navigation
   if (frameLoadCount <= FORM_PAGE_COUNT) return;
-  // this load is the submission confirmation page
+  //this load is the submission confirmation page
   var frame = document.getElementById('surveyFrame');
   var success = document.getElementById('surveySuccess');
   if (frame && success) {
@@ -70,9 +53,7 @@ function handleFrameLoad() {
   }
 }
 
-/* ----------------------------------------------------------
-   Highlight active nav link based on current page
-   ---------------------------------------------------------- */
+// Check if neccessary, or just add active tag to pages manually
 (function setActiveNav() {
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(function (link) {
@@ -84,9 +65,7 @@ function handleFrameLoad() {
   });
 })();
 
-/* ----------------------------------------------------------
-   Smooth scroll for anchor links
-   ---------------------------------------------------------- */
+// Smooth scroll for internal anchor links
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   anchor.addEventListener('click', function (e) {
     var target = document.querySelector(this.getAttribute('href'));
